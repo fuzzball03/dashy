@@ -1,47 +1,299 @@
 ---
 # Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
+  title: Alex's Homelab
+  description: Camelot dashboard
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
-
+    - title: GitHub
+      path: https://github.com/Lissy93/dashy
+    - title: Documentation
+      path: https://dashy.to/docs
 # Optional app settings and configuration
 appConfig:
-  theme: colorful
+  theme: nord-frost
+  customColors:
+    material-dark-original:
+      primary: '#f36558'
+      background: '#39434C'
+      background-darker: '#eb615c'
+      material-light: '#f36558'
+      item-text-color: '#ff948a'
+      curve-factor: 5px
+  enableErrorReporting: true
+  layout: auto
+  iconSize: medium
+  startingView: default
+  defaultOpeningMethod: newtab
+  statusCheck: true
+  statusCheckInterval: 1
+  faviconApi: allesedv
+  routingMode: history
+  enableMultiTasking: false
+  widgetsAlwaysUseProxy: false
+  webSearch:
+    disableWebSearch: false
+    searchEngine: duckduckgo
+    openingMethod: newtab
+    searchBangs: {}
+  enableFontAwesome: true
+  enableMaterialDesignIcons: false
+  hideComponents:
+    hideHeading: false
+    hideNav: false
+    hideSearch: false
+    hideSettings: false
+    hideFooter: false
+  auth:
+    users:
+    - user: alex
+      hash: 37ba3881108bf3e48180350246c5959b9481633d0cb1d8694fb141dc74e5fe79
+      type: admin
+    enableGuestAccess: true
+    enableOidc: false
+    oidc: {}
+    enableHeaderAuth: false
+    headerAuth:
+      userHeader: REMOTE_USER
+      proxyWhitelist: []
+    enableKeycloak: false
+  showSplashScreen: false
+  preventWriteToDisk: false
+  preventLocalSave: false
+  disableConfiguration: false
+  disableConfigurationForNonAdmin: false
+  allowConfigEdit: true
+  enableServiceWorker: false
+  disableContextMenu: false
+  disableUpdateChecks: false
+  disableSmartSort: false
 
 # Main content - An array of sections, each containing an array of items
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+  - name: Media & Entertainment
+    icon: fas fa-photo-video
+    displayData:
+      sortBy: default
+      cols: 2
+      itemCountX: 6
+    items:
+      - title: Alltube
+        icon: hl-alltube
+        id: 0_1956_alltube
+      - title: YT Downloads
+        icon: hl-youtubedl
+        id: 1_1956_ytdownloads
+      - title: Couch Potato
+        icon: hl-couchpotato
+        id: 2_1956_couchpotato
+      - title: Jellyfin
+        icon: hl-jellyfin
+        id: 3_1956_jellyfin
+      - title: FreshRSS
+        icon: hl-freshrss
+        id: 4_1956_freshrss
+      - title: Requestrr
+        icon: hl-requestrr
+        id: 5_1956_requestrr
+      - title: Web Torrent
+        icon: hl-webtorrent
+        id: 6_1956_webtorrent
+      - title: Airsonic
+        icon: hl-airsonic
+        id: 7_1956_airsonic
+      - title: FilePizza
+        icon: hl-filepizza
+        id: 8_1956_filepizza
+      - title: Plex
+        icon: hl-plex
+        id: 9_1956_plex
+      - title: PlexDrive
+        icon: hl-plexdrive
+        id: 10_1956_plexdrive
+      - title: PlexRequests
+        icon: hl-plexrequests
+        id: 11_1956_plexrequests
+  - name: Networking
+    icon: fas fa-network-wired
+    items:
+      - title: OPNSense
+        description: Firewall and network config
+        icon: hl-opnsense
+        id: 0_1064_opnsense
+      - title: Pi-Hole
+        description: DNS ad-blocking
+        icon: hl-pihole
+        url: http://pi-hole/admin
+        id: 1_1064_pihole
+      - title: MalTrail
+        description: Malicious traffic detection system
+        icon: hl-router
+        id: 2_1064_maltrail
+      - title: Ntopng
+        description: Network traffic probe + usage monitor
+        icon: hl-ntop
+        id: 3_1064_ntopng
+      - title: Wireguard
+        description: Wireguard VPN
+        icon: hl-wireguard
+        url: http://10.0.0.20:10086/
+        id: 4_1064_wireguard
+      - title: IT Tools
+        description: Useful set of IT Tools
+        icon: hl-ittools
+        url: http://10.0.0.21:81/
+        id: 5_1064_ittools
+  - name: Network Monitoring
+    icon: fas fa-tachometer-alt-fast
+    items:
+      - title: SmokePing
+        description: Network latency monitoring
+        icon: hl-smokeping
+        id: 0_1840_smokeping
+      - title: StatPing
+        description: Up-time monitoring for local service
+        icon: hl-statping
+        id: 1_1840_statping
+      - title: LibreSpeed
+        description: Local network speed and latency test
+        icon: hl-librespeed
+        id: 2_1840_librespeed
+      - title: NetData
+        description: Real-time system resource usage
+        icon: hl-netdata
+        id: 3_1840_netdata
+      - title: Zabbix
+        description: IT Monitoring
+        icon: hl-zabbix
+        id: 4_1840_zabbix
+      - title: Cockpit
+        description: All-in-one control panel
+        icon: hl-cockpit
+        id: 5_1840_cockpit
+  - name: System Monitoring
+    icon: fas fa-monitor-heart-rate
+    items:
+      - title: cAdvisor
+        description: Container monitoring
+        icon: hl-cadvisor
+        id: 0_1739_cadvisor
+      - title: Glances
+        description: Simple resource usage
+        icon: hl-glances
+        id: 1_1739_glances
+      - title: Dozzle
+        description: Docker container web log viewer
+        icon: hl-dozzle
+        id: 2_1739_dozzle
+      - title: HealthChecks
+        description: Cron Job Monitoring
+        icon: hl-healthchecks
+        url: https://healthchecks.io/checks/
+        id: 3_1739_healthchecks
+      - title: Grafana
+        description: Data visualised on dashboards
+        icon: hl-grafana
+        id: 4_1739_grafana
+      - title: Prometheus
+        description: System Statistics Aggregation with PromQL
+        icon: hl-prometheus
+        id: 5_1739_prometheus
+  - name: Productivity
+    icon: fas fa-bookmark
+    items:
+      - title: NextCloud
+        description: File storage and apps
+        icon: hl-nextcloud
+        id: 0_1302_nextcloud
+      - title: BitWarden
+        description: Password manager
+        icon: hl-bitwarden
+        id: 1_1302_bitwarden
+      - title: Actual Budget
+        description: Budgeting Software
+        icon: hl-actual
+        url: https://10.0.0.21/
+        target: newtab
+        statusCheckAllowInsecure: true
+        id: 2_1302_actualbudget
+      - title: Wallabag
+        description: Bookmark Manager
+        icon: hl-wallabag
+        id: 3_1302_wallabag
+      - title: iDrac
+        description: iDrac
+        icon: hl-idrac
+        url: https://10.0.0.251/
+        statusCheckAllowInsecure: true
+        id: 4_1302_idrac
+      - title: VS Code
+        description: Cloud code editor
+        icon: hl-code
+        id: 5_1302_vscode
+      - title: Dockge
+        description: Proxmox Docker instance
+        icon: hl-dockge
+        url: http://10.0.0.21:5001/
+        target: newtab
+        statusCheck: true
+        id: 6_1302_dockge
+      - title: Portainer
+        description: Docker Portainer Instance
+        icon: hl-portainer
+        url: http://10.0.0.21:5002/
+        id: 7_1302_portainer
+      - title: VirtIO Drivers
+        description: VirtIO Drivers used for clients run in CT's and VM's
+        icon: hl-vm
+        url: https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers
+        id: 8_1302_virtiodrivers
+  - name: Config Helpers
     icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+    displayData:
+      collapsed: true
+      itemSize: small
+      sectionLayout: grid
+      itemCountX: 2
+    items:
+    - title: Schema Example
+      url: https://json-schema.app/view/%23?url=https%3A%2F%2Fraw.githubusercontent.com%2FLissy93%2Fdashy%2Fmaster%2Fsrc%2Futils%2FConfigSchema.json
+      icon: generative
+    - title: Config Validator
+      url: https://www.jsonschemavalidator.net/s/JFUj7X9J
+      icon: generative
+    - title: JSON to YAML
+      url: https://jsonformatter.org/json-to-yaml
+      icon: generative
+    - title: YAML to JSON
+      url: https://jsonformatter.org/yaml-to-json
+      icon: generative
+    - title: Example Configs
+      url: https://gist.github.com/Lissy93/000f712a5ce98f212817d20bc16bab10
+      icon: generative
+    - title: Config Docs
+      url: https://dashy.to/docs/configuring
+      icon: generative
+  - name: Getting Started
+    icon: fas fa-rocket
+    items:
+    - title: Dashy Live
+      description: Development a project management links for Dashy
+      icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
+      url: https://live.dashy.to/
+      target: newtab
+    - title: GitHub
+      description: Source Code, Issues and Pull Requests
+      url: https://github.com/lissy93/dashy
+      icon: favicon
+    - title: Docs
+      description: Configuring & Usage Documentation
+      provider: Dashy.to
+      icon: far fa-book
+      url: https://dashy.to/docs
+    - title: Showcase
+      description: See how others are using Dashy
+      url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
+      icon: far fa-grin-hearts
+    - title: Config Guide
+      description: See full list of configuration options
+      url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+      icon: fas fa-wrench
